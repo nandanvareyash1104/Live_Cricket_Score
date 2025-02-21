@@ -47,17 +47,17 @@ const CricketScore = () => {
         <p>Live Cricket Score</p>
       </div>
       <div className="container">
-        {data ? (
+        {Array.isArray(data) && data.length > 0 ? (
           data.map((val, index) => {
             console.log(val);
             if (val.status !== "Match not started") {
               if (
-                val.series.includes(search) ||
-                val.t1.includes(search) ||
-                val.t2.includes(search)
+                val.series.toLowerCase().includes(search.toLowerCase()) ||
+                val.t1.toLowerCase().includes(search.toLowerCase()) ||
+                val.t2.toLowerCase().includes(search.toLowerCase())
               ) {
                 return (
-                  <div className="card">
+                  <div className="card" key={index}>
                     <h3>{val.series}</h3>
                     <h3>{val.matchType}</h3>
                     <div className="img">
@@ -67,7 +67,7 @@ const CricketScore = () => {
                         <p>{val.t1s}</p>
                       </div>
                       <div>
-                        <img src={val.t2img} alt="img"/>
+                        <img src={val.t2img} alt="img" />
                         <p>{val.t2}</p>
                         <p>{val.t2s}</p>
                       </div>
@@ -78,12 +78,12 @@ const CricketScore = () => {
               }
               if (search === "") {
                 return (
-                  <div className="card">
+                  <div className="card" key={index}>
                     <h3>{val.series}</h3>
                     <h3>{val.matchType}</h3>
                     <div className="img">
                       <div>
-                        <img src={val.t1img} alt="img"/>
+                        <img src={val.t1img} alt="img" />
                         <p>{val.t1s}</p>
                       </div>
                       <div>
@@ -96,6 +96,7 @@ const CricketScore = () => {
                 );
               }
             }
+            return null;
           })
         ) : (
           <p>Data not Available</p>
