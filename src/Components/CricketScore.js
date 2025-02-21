@@ -50,7 +50,7 @@ const CricketScore = () => {
         {data ? (
           data.map((val, index) => {
             console.log(val);
-            if (val.status != "Match not started") {
+            if (val.status !== "Match not started") {
               if (
                 val.series.includes(search) ||
                 val.t1.includes(search) ||
@@ -62,12 +62,12 @@ const CricketScore = () => {
                     <h3>{val.matchType}</h3>
                     <div className="img">
                       <div>
-                        <img src={val.t1img} />
+                        <img src={val.t1img} alt="img" />
                         <p>{val.t1}</p>
                         <p>{val.t1s}</p>
                       </div>
                       <div>
-                        <img src={val.t2img} />
+                        <img src={val.t2img} alt="img"/>
                         <p>{val.t2}</p>
                         <p>{val.t2s}</p>
                       </div>
@@ -76,18 +76,18 @@ const CricketScore = () => {
                   </div>
                 );
               }
-              if (search == "") {
+              if (search === "") {
                 return (
                   <div className="card">
                     <h3>{val.series}</h3>
                     <h3>{val.matchType}</h3>
                     <div className="img">
                       <div>
-                        <img src={val.t1img} />
+                        <img src={val.t1img} alt="img"/>
                         <p>{val.t1s}</p>
                       </div>
                       <div>
-                        <img src={val.t2img} />
+                        <img src={val.t2img} alt="img" />
                         <p>{val.t2s}</p>
                       </div>
                     </div>
