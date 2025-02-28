@@ -1,0 +1,195 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.content-container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 400px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-button {
+  background: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.search-button:hover {
+  background: #ffa500;
+}
+
+.match-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.match-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.match-card:hover {
+  transform: scale(1.05);
+}
+
+.series-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.match-type {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.teams-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  gap: 10px;
+}
+
+.team {
+  text-align: center;
+}
+
+.team-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.team-score {
+  font-size: 16px;
+  color: #0f0;
+  font-weight: bold;
+}
+
+.vs-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.match-status {
+  font-size: 16px;
+  color: #ddd;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.skeleton-card {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
